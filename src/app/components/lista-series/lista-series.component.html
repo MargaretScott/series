@@ -1,0 +1,31 @@
+<div class="filtros d-flex justify-content-between my-4">
+  <div class="rating">
+    <label class="form-label">Puntuación mayor o igual a</label>
+    <select class="form-select" (change)="recogerDatosSelect($event)">
+      <option value="">Selecciona un puntuación</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+  <div class="search">
+    <label for="search" class="form-label">Buscar por titulo</label>
+    <input type="text" class="form-control" placeholder="introduce titulo de la serie"
+      (input)="recogerDatosSearch($event)">
+  </div>
+</div>
+<div class="row g-4" *ngIf="series.length !== 0">
+  <article class="col-6 col-md-4" *ngFor="let serie of series">
+    <app-card-serie [miSerie]="serie"></app-card-serie>
+  </article>
+</div>
+<div class="p-5" *ngIf="series.length === 0">
+  <h3>No hay resultado para esta busqueda</h3>
+</div>

@@ -1,0 +1,12 @@
+<div class="card shadow">
+  <img class="imagen" [src]="miSerie.imagen" [alt]="miSerie.titulo">
+  <div class="card-body">
+    <h3 class="card-title">{{miSerie.titulo}}</h3>
+    <ul>
+      <li>Creador: {{miSerie.creador}}</li>
+      <li>Puntuacion: {{miSerie.rating}}</li>
+      <li>Canal: {{ miSerie.canal }}</li>
+    </ul>
+    <button class="btn btn-dark" [routerLink]="['/serie', miSerie.id, 'personajes']">Ver detalle</button>
+  </div>
+</div>

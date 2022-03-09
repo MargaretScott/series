@@ -1,0 +1,7 @@
+<h6 class="titulo">Temporadas</h6>
+<ul class="list-group" *ngIf="arrTemporadas.length !== 0">
+  <li *ngFor="let temporada of arrTemporadas">{{temporada}}</li>
+</ul>
+<ul class="list-group" *ngIf="arrTemporadas.length === 0">
+  <li>En estos momentos solo hay una temporada disponible.</li>
+</ul>

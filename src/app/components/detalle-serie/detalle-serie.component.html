@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between">
+  <h1>{{miSerie?.titulo}}</h1>
+  <button [routerLink]="['/series']" class="btn btn-dark">Todas las series</button>
+</div>
+<hr>
+<div class="row">
+  <figure class="col-12 col-md-4">
+    <img class="cartel" [src]="miSerie?.imagen" [alt]="miSerie?.titulo">
+  </figure>
+  <div class="col-12 col-md-8">
+    <ul>
+      <li>Director: {{miSerie?.creador}}</li>
+      <li>Fecha: {{miSerie?.fechas}}</li>
+      <li>Puntuacion: {{miSerie?.rating}}</li>
+      <li>Canal: {{miSerie?.canal}}</li>
+    </ul>
+
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-dark" routerLinkActive="active"
+        [routerLink]="['/serie', miSerie?.id, 'personajes']">Personajes</button>
+      <button type="button" class="btn btn-outline-dark" routerLinkActive="active"
+        [routerLink]="['/serie', miSerie?.id, 'temporadas']">Temporadas</button>
+    </div>
+    <hr>
+    <div>
+      <router-outlet></router-outlet>
+      <!-- router-outlet carga debajo del el componente que este definido en la ruta. Cuando el router-outlet esta dentro de un componente que ya tiene ruta significa que tiene rutas hijas (children)-->
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<h6 class="titulo">Personajes</h6>
+<div class="row mt-3">
+  <div class="col-12 col-md-3 card" *ngFor="let personaje of arrPersonajes">
+    <img class="img-fluid" [src]="personaje?.imagen">
+    <h5>{{personaje?.nombre_personaje}}</h5>
+    <ul>
+      <li>Actor: {{personaje?.nombre_real}} </li>
+      <li>Episodios: {{personaje?.episodios}} </li>
+    </ul>
+  </div>
+</div>
